@@ -1,7 +1,9 @@
+using StudentService.Models;
+
 namespace StudentService.Data
 {
     public interface IStudentRepo
     {
-         void CreateStudent();
+         void CreateStudent(Student student);
     }
 }

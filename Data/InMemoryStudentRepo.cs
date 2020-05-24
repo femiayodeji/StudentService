@@ -1,10 +1,22 @@
+using System;
+using StudentService.Models;
+
 namespace StudentService.Data
 {
     public class InMemoryStudentRepo : IStudentRepo
     {
-        public void CreateStudent()
+        private readonly StudentContext _context;
+
+        public InMemoryStudentRepo(StudentContext context)
         {
-            throw new System.NotImplementedException();
+            _context = context;
+        }
+        public void CreateStudent(Student student)
+        {
+            if(student == null){
+                throw new ArgumentNullException(nameof(student));
+            }
+            _context.Students.Add(student);
         }
     }
 }
