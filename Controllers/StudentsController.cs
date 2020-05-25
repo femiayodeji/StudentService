@@ -15,6 +15,7 @@ namespace StudentService.Controller
             _repository = repository;
         }
 
+        //POST api/students
         [HttpPost]
         public ActionResult <Student> CreateStudent(Student student){
             if(student == null){
@@ -23,8 +24,8 @@ namespace StudentService.Controller
             _repository.CreateStudent(student);
             _repository.SaveChanges();
             return Ok(student);
-            // if there is read student location, 
-            // by REST convention I'm suppose to return 201(created response)
+            // if there is read student endpoint, 
+            // by REST convention I'm suppose to return 201(created response) with the location of the object
             // instead of 200(Ok)
             // return CreatedAtRoute(nameof(GetStudentById), new {Id = student.Id}, student);
         }
