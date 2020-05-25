@@ -7,5 +7,11 @@ namespace StudentService.Controller
     [ApiController]
     public class StudentsController : ControllerBase
     {
+        private readonly IStudentRepo _repository;
+
+        public StudentsController(IStudentRepo repository)
+        {
+            _repository = repository;
+        }
     }
 }
