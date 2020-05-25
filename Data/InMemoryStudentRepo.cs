@@ -18,5 +18,10 @@ namespace StudentService.Data
             }
             _context.Students.Add(student);
         }
+
+        public bool SaveChanges()
+        {
+            return (_context.SaveChanges() >= 0);
+        }
     }
 }
