@@ -3,5 +3,7 @@ using StudentService.Models;
 
 namespace StudentService.Services
 {
-    public interface IStudentService : IStudentRepo {}
+    public interface IStudentService : IStudentRepo 
+    {
+    }
 }

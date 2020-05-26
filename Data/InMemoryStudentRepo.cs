@@ -17,9 +17,10 @@ namespace StudentService.Data
                 throw new ArgumentNullException(nameof(student));
             }
             _context.Students.Add(student);
+            SaveChanges();
         }
 
-        public bool SaveChanges()
+        private bool SaveChanges()
         {
             return (_context.SaveChanges() >= 0);
         }

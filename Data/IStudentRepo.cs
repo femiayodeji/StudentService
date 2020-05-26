@@ -4,7 +4,6 @@ namespace StudentService.Data
 {
     public interface IStudentRepo
     {
-        bool SaveChanges();
-         void CreateStudent(Student student);
+        void CreateStudent(Student student);
     }
 }

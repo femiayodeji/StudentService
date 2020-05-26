@@ -22,7 +22,6 @@ namespace StudentService.Controller
                 return BadRequest();
             }
             _studentService.CreateStudent(student);
-            _studentService.SaveChanges();
             return Ok(student);
             // if there is read student endpoint, 
             // by REST convention I'm suppose to return 201(created response) with the location of the object
