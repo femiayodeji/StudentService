@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using StudentService.Data;
@@ -35,6 +36,16 @@ namespace StudentService.Controller
         public ActionResult <IEnumerable<Student>> GetStudents(){
             var students = _studentService.GetAllStudent();
             return Ok(students);
+        }
+
+        //GET api/students/{id}
+        [HttpGet("{id}", Name = "GetStudentById")]
+        public ActionResult <Student> GetStudentById(int id){
+            var student = _studentService.GetStudentById(id);
+            if(student != null){
+                return Ok(student);
+            }
+            return NotFound();
         }
     }
 }
