@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using StudentService.Models;
 
 namespace StudentService.Data
@@ -18,6 +20,10 @@ namespace StudentService.Data
             }
             _context.Students.Add(student);
             SaveChanges();
+        }
+
+        public IEnumerable<Student> GetAllStudent(){
+            return _context.Students.ToList();
         }
 
         private bool SaveChanges()
