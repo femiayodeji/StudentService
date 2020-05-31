@@ -47,5 +47,15 @@ namespace StudentService.Controller
             }
             return NotFound();
         }
+
+        //GET api/students/{keyword}
+        [HttpGet("Search")]
+        public ActionResult <IEnumerable<Student>> SearchStudents([FromQuery] string keyword){
+            if(!string.IsNullOrWhiteSpace(keyword)){
+                var students = _studentService.FindStudents(keyword);
+                return Ok(students);
+            }
+            return BadRequest();
+        }
     }
 }

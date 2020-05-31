@@ -8,5 +8,6 @@ namespace StudentService.Data
         void CreateStudent(Student student);
         IEnumerable<Student> GetAllStudent();
         Student GetStudentById(int id);
+        IEnumerable<Student> FindStudents(string keyword);
     }
 }

@@ -6,6 +6,5 @@ namespace StudentService.Services
 {
     public interface IStudentService : IStudentRepo 
     {
-        IEnumerable<Student> FindStudents(string keyword);
     }
 }

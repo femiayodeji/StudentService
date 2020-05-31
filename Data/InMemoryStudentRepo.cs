@@ -21,6 +21,18 @@ namespace StudentService.Data
             _context.Students.Add(student);
             SaveChanges();
         }
+        
+        public IEnumerable<Student> FindStudents(string keyword)
+        {
+            return GetAllStudent().Where(x => 
+                x.FirstName.Contains(keyword) || 
+                x.LastName.Contains(keyword) || 
+                x.MatricNumber.Contains(keyword) || 
+                x.Year.ToString().Contains(keyword) ||
+                x.Program.Contains(keyword) ||
+                x.EntryDate.ToString().Contains(keyword)
+            );
+        }
 
         public IEnumerable<Student> GetAllStudent()
         {
