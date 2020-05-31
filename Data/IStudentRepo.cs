@@ -7,6 +7,6 @@ namespace StudentService.Data
     {
         void CreateStudent(Student student);
         IEnumerable<Student> GetAllStudent();
-        Student GetStudentById();
+        Student GetStudentById(int id);
     }
 }
