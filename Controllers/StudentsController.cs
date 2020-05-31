@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using StudentService.Data;
 using StudentService.Models;
@@ -27,6 +28,13 @@ namespace StudentService.Controller
             // by REST convention I'm suppose to return 201(created response) with the location of the object
             // instead of 200(Ok)
             // return CreatedAtRoute(nameof(GetStudentById), new {Id = student.Id}, student);
+        }
+
+        //GET api/students
+        [HttpGet]
+        public ActionResult <IEnumerable<Student>> GetStudents(){
+            var students = _studentService.GetAllStudent();
+            return Ok(students);
         }
     }
 }
