@@ -6,8 +6,7 @@ namespace StudentService.Data
     public interface IStudentRepo
     {
         void CreateStudent(Student student);
-        IEnumerable<Student> GetAllStudent();
-        Student GetStudentById(int id);
-        IEnumerable<Student> FindStudents(string keyword);
+        IEnumerable<Student> ReadAllStudent();
+        Student ReadStudentById(int id);
     }
 }

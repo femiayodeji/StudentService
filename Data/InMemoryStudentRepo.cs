@@ -22,24 +22,12 @@ namespace StudentService.Data
             SaveChanges();
         }
         
-        public IEnumerable<Student> FindStudents(string keyword)
-        {
-            return GetAllStudent().Where(x => 
-                x.FirstName.Contains(keyword) || 
-                x.LastName.Contains(keyword) || 
-                x.MatricNumber.Contains(keyword) || 
-                x.Year.ToString().Contains(keyword) ||
-                x.Program.Contains(keyword) ||
-                x.EntryDate.ToString().Contains(keyword)
-            );
-        }
-
-        public IEnumerable<Student> GetAllStudent()
+        public IEnumerable<Student> ReadAllStudent()
         {
             return _context.Students.ToList();
         }
 
-        public Student GetStudentById(int id)
+        public Student ReadStudentById(int id)
         {
             return _context.Students.FirstOrDefault(x => x.Id == id);
         }
