@@ -56,7 +56,8 @@ namespace StudentService.Controller
                 var students = _studentService.FindStudents(keyword);
                 return Ok(students);
             }
-            return BadRequest();
+            object error = new { Title = "Empty query is invalid.", Status = 400};
+            return BadRequest(error);
         }
     }
 }
